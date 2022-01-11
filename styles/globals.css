@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Urbanist&display=swap');
+
+@layer components {
+  .btn-primary{
+    @apply py-3 px-4 hover:bg-blue-800 bg-[#33468A] active:bg-blue-700 text-white rounded-md;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+p {
+font-family: 'Urbanist', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 28px;
+}
+/* .dropdown-content{
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} */
