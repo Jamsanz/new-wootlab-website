@@ -5,7 +5,7 @@ import DropDownMenu from './dropdown';
 
 const Header = () => {
   return (
-    <div className='flex justify-between items-center pt-6 pb-3'>
+    <div className='flex justify-between items-center h-24'>
       <img src="/images/logo.png" alt="" />
       <ul className="md:inline-flex hidden lg:space-x-10 space-x-5 list-none ">
         <li><Link href=""><a className=''>Blog</a></Link></li>
