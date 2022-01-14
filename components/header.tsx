@@ -40,7 +40,7 @@ const Header = () => {
       className={`
         p-4 flex h-24 
         items-center justify-between
-        relative ${scroll && `sticky top-0 bg-white slide-bottom`}
+        relative ${scroll && `sticky top-0 bg-white slide-bottom shadow-md`}
         `}
     >
       <img src="/images/logo.png" alt="" />
