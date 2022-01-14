@@ -3,7 +3,7 @@ import React from 'react'
 import Footer from './footer'
 import Header from './header'
 
-const Layout = ({ children }: {children: JSX.Element}): JSX.Element => {
+const Layout = ({ children }: {children?: JSX.Element[] | JSX.Element}): JSX.Element => {
   return (
     <>
       <Head>
@@ -14,7 +14,7 @@ const Layout = ({ children }: {children: JSX.Element}): JSX.Element => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter&family=Urbanist&display=swap" rel="stylesheet" />
       </Head>
-      <main className='min-h-screen container mx-auto'>
+      <main className='min-h-screen mx-auto'>
         <Header />
         {children}
       </main>
