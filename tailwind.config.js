@@ -4,7 +4,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily:{
+      'urbanist': ['Urbanist', 'sans-serif']
+    },
     extend: {
+      space:{
+        'auto': 'auto'
+      },
       height:{
         '100': '100rem'
       }
