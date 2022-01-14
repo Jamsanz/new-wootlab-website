@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Button from './button';
 import DropDownMenu from './dropdown';
 
 const Header = () => {
   const [open, setOpen] = useState<boolean>(false);
   const menuRef = useRef<any>();
+  const [scroll, setScroll] = useState<boolean>(false);
     useEffect(() => {
       
       function handleClickOutside(event: MouseEvent) {
@@ -19,8 +20,29 @@ const Header = () => {
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }, [menuRef]);
+    useEffect(() => {
+      let lastScroll = window.scrollY;
+      function scroll(e: any) {
+        if (lastScroll < window.scrollY) {
+          setScroll(false);
+        }else{
+          setScroll(true);
+        }
+        lastScroll = window.scrollY;
+      }
+      window.addEventListener('scroll',scroll);
+      return () => {
+        window.removeEventListener('scroll',scroll);
+      }
+    }, []);
   return (
-    <div className='p-4 flex justify-between items-center h-24 relative'>
+    <header
+      className={`
+        p-4 flex h-24 
+        items-center justify-between
+        relative ${scroll && `sticky top-0 bg-white slide-bottom`}
+        `}
+    >
       <img src="/images/logo.png" alt="" />
       <ul
         ref={menuRef}
@@ -28,10 +50,10 @@ const Header = () => {
           slide-bottom
           absolute md:relative
           top-8 md:top-0
-          left-0 
+          left-0
           w-full md:w-auto
           h-auto md:h-auto
-          bg-white md:bg-transparent
+          bg-white
           shadow-2xl md:shadow-none
           p-5 md:p-0
           rounded-lg lg:rounded-none
@@ -66,7 +88,7 @@ const Header = () => {
       <div className='hidden md:inline-flex'>
       <Button> Hire developers</Button>
       </div>
-    </div>
+    </header>
   )
 
 
