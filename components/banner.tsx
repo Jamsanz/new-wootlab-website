@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Banner: React.FC = ():JSX.Element => {
+const Banner = ({title, description}:{title?: string, description?: string}):JSX.Element => {
   return (
     <div className='flex flex-col md:flex-row '>
       <div className='relative flex-1'>
