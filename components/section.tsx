@@ -10,6 +10,38 @@ const PlanSection = () => {
     const { value }:IOptions = e.target;
     setChosenPlan({value});
   }
+
+  const website_bundle = <>
+  {Object.keys(plans['Website Bundle']).map((plan, i)=>(
+    <PlanCard
+      title={Object.keys(plans['Website Bundle'])[i]}
+      option={
+        plans['Website Bundle'][plan as 'LAUNCH' | 'LEAD' | 'LEVEL-UP']
+      }
+    />
+  ))}
+  </>
+  const mobile_bundle = <>
+  {Object.keys(plans['Mobile App Bundle']).map((plan, i)=>(
+    <PlanCard
+      title={Object.keys(plans['Website Bundle'])[i]}
+      option={
+        plans['Mobile'][plan as 'BASIC' | 'STANDARD' | 'PLUS']
+      }
+    />
+  ))}
+  </>
+  const website_bundle = <>
+  {Object.keys(plans['Website Bundle']).map((plan, i)=>(
+    <PlanCard
+      title={Object.keys(plans['Website Bundle'])[i]}
+      option={
+        plans['Website Bundle'][plan as 'LAUNCH' | 'LEAD' | 'LEVEL-UP']
+      }
+    />
+  ))}
+  </>
+
   return (
     <>
     <Banner />
@@ -27,13 +59,13 @@ const PlanSection = () => {
         <option value="Digital Virtual Training">Digital Virtual Training</option>
         <option value="Mobile App Bundle">Mobile App Bundle</option>
       </select>
-      <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10'>
+      <div className='md:flex hidden flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10'>
         {
           Object.keys(plans[chosenPlan.value]).map((plan, i) => {
             return <PlanCard
               title={Object.keys(plans[chosenPlan.value])[i]}
               option={
-                plans[chosenPlan.value][plan] 
+                plans[chosenPlan.value][plan]
               }
               key={i}
             />

@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './button'
 
-const PlanCard = ({ title, option }: { title: string, option?: Array<String> }) => {
+const PlanCard = ({ title, option }: { title: string, option?: Array<string> }) => {
   return (
     <div className='bg-[#C6EAFA] inline-flex flex-col space-y-5 p-10 rounded-md flex-1'>
       <h1 className="text-3xl font-semibold text-center">{title}</h1>
