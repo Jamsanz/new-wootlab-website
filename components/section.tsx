@@ -60,10 +60,10 @@ const PlanSection = () => {
         title={''}
         description={''}
       />
-      <div className='flex flex-col z-10 p-10 lg:space-y-10 bg-[#F0F8FC]'>
+      <div className='flex space-y-4 flex-col z-10 p-10 md:space-y-10 bg-[#F0F8FC]'>
         <h2 className='m-auto h2'>Choose your plan</h2>
         <select
-          className='md:w-96 md:h-12 text-black m-auto rounded-xl focus:outline-blue-400 focus:ring-offset-2 focus:ring-blue-400'
+          className='w-48 h-10 md:w-96 md:h-12 text-black m-auto rounded-xl focus:outline-blue-400 focus:ring-offset-2 focus:ring-blue-400'
           name=""
           onChange={handleChange}
         >
@@ -72,6 +72,10 @@ const PlanSection = () => {
           <option value="Digital Virtual Training">Digital Virtual Training</option>
           <option value="Mobile App Bundle">Mobile App Bundle</option>
         </select>
+
+        <div className="md: hidden">
+
+        </div>
         <div className='md:flex hidden flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10'>
           {
             chosenPlan.value === 'Website Bundle' ? Website_bundle :

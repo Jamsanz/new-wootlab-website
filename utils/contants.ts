@@ -89,3 +89,22 @@ export const plans = {
     ]
   }
 };
+
+const plans = {
+  'Website Bundle': {
+    title: '',
+    description: ''
+  },
+  'digital virtual training': {
+    title: '',
+    description: ''
+  },
+  'Mobile App bundle': {
+    title: '',
+    description: ''
+  },
+  'Enterprise Bundle': {
+    title: '',
+    description: ''
+  },
+}
